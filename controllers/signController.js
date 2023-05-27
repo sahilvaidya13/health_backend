@@ -96,7 +96,7 @@ exports.getusers = async (req, res) => {
   try {
     const user = await User.find({});
 
-    res.status(200).send(users);
+    res.status(200).send(user);
   } catch (error) {
     console.log(error);
   }
