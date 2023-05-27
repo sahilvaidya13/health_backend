@@ -92,6 +92,16 @@ const JWT_SECRET = process.env.JWT_SECRET;
 //   }
 // };
 
+exports.getusers = async (req, res) => {
+  try {
+    const user = await User.find({});
+
+    res.status(200).send(users);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 exports.register = async (req, res) => {
   try {
     const { name, email, pass, age, sex, phone } = req.body;
